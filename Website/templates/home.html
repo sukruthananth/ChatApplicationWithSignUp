@@ -1,0 +1,76 @@
+{% extends "index.html" %}
+
+{% block title %} Home  {% endblock %}
+
+{% block bodycontent %}
+<style type="text/css">
+  .buttonclass{
+  margin:2% 48%;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+ .container b {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+    .container b.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+            .time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+
+}
+       .container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+</style>
+
+<div class="row" style="padding-top:10px;" >
+    <div class="col"><hr></div>
+    <div class="col-auto"><p class="h3" align="center">Chat Box</p></div>
+    <div class="col"><hr></div>
+</div>
+<div class="container" id = "container" >
+<div class="overflow-auto msgcontainer" data-bs-spy="scroll" data-bs-target="#navbar-example" id = 'msgcontainer'style="overflow-y: scroll; height:500px;align:center;">
+</div>
+
+<form id="msgform" class="buttonform" method="POST" style="bottom:0; margin: 0% 0% 0% 0%;">
+<input id="inputmsg" type="text" name ="inputmessage" class="form-control" id="floatingInput2" placeholder="type your message">
+<div class="buttonclass">
+  <button class=" btn btn-lg btn-primary" id = "button1" type="submit">Send</button>
+    </div>
+</form>
+</div>
+{% endblock %}
